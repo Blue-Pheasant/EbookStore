@@ -46,7 +46,6 @@
                 <option value="CLIENT" selected="selected">Client</option>
                 <option value="ADMIN">Administrador</option>
               </select>
-              <!-- <input type="text" class="form-control" id="role" name="role" placeholder="Rol"> -->
             </div>
           </div>
           <div class="form-row">

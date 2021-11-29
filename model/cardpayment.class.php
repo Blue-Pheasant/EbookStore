@@ -1,5 +1,5 @@
 <?php
-class CartPayment {
+class CardPayment {
 
   /* Mapped */
   
@@ -21,7 +21,7 @@ class CartPayment {
         $this->number_card = $number_card;
     }
 
-  public static function GetCartPaymentById ($id) {
+  public static function GetCardPaymentById ($id) {
     $model = null;
     $db = (new DataBase())->CreateConnection();
     $statement = $db->prepare('SELECT * FROM `card_payment` WHERE `id_payment` = ?');
@@ -29,20 +29,20 @@ class CartPayment {
     $statement->bind_result($id, $number_card);
     if ($statement->execute()) {
       while ($statement->fetch()) {
-        $model = new CartPayment($id, $number_card);
+        $model = new CardPayment($id, $number_card);
       }
     }
     return $model;
   }
 
-  public static function GetAllCartPayments () {
+  public static function GetAllCardPayments () {
     $models = [];
     $db = (new DataBase())->CreateConnection();
     $statement = $db->prepare('SELECT * FROM `card_payment`');
     $statement->bind_result($id, $number_card);
     if ($statement->execute()) {
       while ($statement->fetch()) {
-        $model = new CartPayment($id, $number_card);
+        $model = new CardPayment($id, $number_card);
         array_push($models, $model);
       }
     }

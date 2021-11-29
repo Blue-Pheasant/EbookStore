@@ -138,25 +138,6 @@ class UsersController extends BaseController {
             $model
         );
     }
-
-    // public function DetailsJson () {
-    //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    //         $id = (int)$_REQUEST['id'];
-    //         $model = User::GetUserById($id);
-    //         parent::RenderJson($model->ToAssociativeArray());
-    //     }
-    // }
-
-    // public function DeleteJson () {
-    //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    //         $id = (int)$_REQUEST['id'];
-    //         $model = User::GetUserById($id);
-    //         $model->Delete();
-    //         $result = array('status' => 'done');
-    //         parent::RenderJson($result);
-    //     }
-    // }
-
 }
 
 ?>

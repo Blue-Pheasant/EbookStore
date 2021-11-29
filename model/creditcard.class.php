@@ -1,5 +1,5 @@
 <?php
-class CreditCart {
+class CreditCard {
 
   /* Mapped */
   
@@ -51,7 +51,7 @@ class CreditCart {
     $this->end_time = $end_time;
   }
 
-  public static function GetCreditCartById ($id) {
+  public static function GetCreditCardById ($id) {
     $model = null;
     $db = (new DataBase())->CreateConnection();
     $statement = $db->prepare('SELECT * FROM `credit_card` WHERE `number_card` = ?');
@@ -59,20 +59,20 @@ class CreditCart {
     $statement->bind_result($number_card, $n_bank, $n_owner, $n_branch, $id_customer, $start_time, $end_time);
     if ($statement->execute()) {
       while ($statement->fetch()) {
-        $model = new CreditCart($number_card, $n_bank, $n_owner, $n_branch, $id_customer, $start_time, $end_time);
+        $model = new CreditCard($number_card, $n_bank, $n_owner, $n_branch, $id_customer, $start_time, $end_time);
       }
     }
     return $model;
   }
 
-  public static function GetAllCreditCarts () {
+  public static function GetAllCreditCards () {
     $models = [];
     $db = (new DataBase())->CreateConnection();
     $statement = $db->prepare('SELECT * FROM `credit_card`');
     $statement->bind_result($number_card, $n_bank, $n_owner, $n_branch, $id_customer, $start_time, $end_time);
     if ($statement->execute()) {
       while ($statement->fetch()) {
-        $model = new CreditCart($number_card, $n_bank, $n_owner, $n_branch, $id_customer, $start_time, $end_time);
+        $model = new CreditCard($number_card, $n_bank, $n_owner, $n_branch, $id_customer, $start_time, $end_time);
         array_push($models, $model);
       }
     }

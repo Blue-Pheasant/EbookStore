@@ -10,7 +10,6 @@ class HomeController extends BaseController {
             'view/home/home.php'
         );
     }
-    
 }
 
 ?>
