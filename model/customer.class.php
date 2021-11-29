@@ -41,19 +41,18 @@ class Customer {
   public function setPassWord($password_customer) { $this->password_customer = $password_customer; }
 
   public function __construct(
-    $id_customer = '',
     $f_name = '',
     $m_name = '',
-    $l_name = 0.0,
-    $sex = 0,
+    $l_name = '',
+    $sex = '',
     $date_of_birth = '',
     $address_customer = '',
     $phone_customer = '',
     $email_customer = '',
     $username_customer = '',
-    $password_customer = ''
+    $password_customer = '',
+    $id_customer = ''
   ) {
-    $this->id_customer = $id_customer;
     $this->f_name = $f_name;
     $this->m_name = $m_name;
     $this->l_name = $l_name;
@@ -64,6 +63,7 @@ class Customer {
     $this->email_customer = $email_customer;
     $this->username_customer = $username_customer;
     $this->password_customer = $password_customer;
+    $this->id_customer = $id_customer;
   }
 
   public static function GetCustomerById ($id_customer) {
@@ -83,11 +83,11 @@ class Customer {
   public static function GetAllCustomers () {
     $models = [];
     $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare('SELECT * FROM `customer`');
-    $statement->bind_result($id_customer, $f_name, $m_name, $m_name, $l_name, $sex, $date_of_birth, $address_customer, $phone_customer, $email_customer, $username_customer, $password_customer);
+    $statement = $db->prepare('SELECT `f_name`, `m_name`, `l_name`, `sex`, `date_of_birth`, `address_customer`, `phone_customer`, `email_customer`, `username_customer`, `password_customer`, `id_customer` FROM `customer`');
+    $statement->bind_result($f_name, $m_name, $l_name, $sex, $date_of_birth, $address_customer, $phone_customer, $email_customer, $username_customer, $password_customer, $id_customer);
     if ($statement->execute()) {
       while ($statement->fetch()) {
-        $model = new Customer($id_customer, $f_name, $m_name, $m_name, $l_name, $sex, $date_of_birth, $address_customer, $phone_customer, $email_customer, $username_customer, $password_customer);
+        $model = new Customer($f_name, $m_name, $l_name, $sex, $date_of_birth, $address_customer, $phone_customer, $email_customer, $username_customer, $password_customer, $id_customer);
         array_push($models, $model);
       }
     }
@@ -96,10 +96,9 @@ class Customer {
 
   public function Create () {
     $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare('INSERT INTO `customer`(`id_customer`, `f_name`, `m_name`, `m_name`, `l_name`, `sex`, `date_of_birth`, `address_customer`, `phone_customer`, `email_customer`, `username_customer`, `password_customer`) VALUES (?, ?, ?, ?, ?)');
+    $statement = $db->prepare('INSERT INTO `customer`(`f_name`, `m_name`, `l_name`, `sex`, `date_of_birth`, `address_customer`, `phone_customer`, `email_customer`, `username_customer`, `password_customer`, `id_customer`) VALUES (?, ?, ?, ?, ?)');
     $statement->bind_param(
       'sssssssssss',
-      $this->id_customer,
       $this->f_name,
       $this->m_name,
       $this->l_name,
@@ -109,7 +108,8 @@ class Customer {
       $this->phone_customer,
       $this->email_customer,
       $this->username_customer,
-      $this->password_customer
+      $this->password_customer,
+      $this->id_customer
     );
     $statement->execute();  
   }

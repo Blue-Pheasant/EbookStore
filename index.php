@@ -1,12 +1,10 @@
 <?php
 include_once('./security/security.class.php');
-include_once('./session/shoppingcart.session.php');
 include_once('./model/user.class.php');
-include_once('./model/article.class.php');
-include_once('./model/sale.class.php');
-include_once('./model/setting.class.php');
-include_once('./model/shoppingcart.class.php');
-include_once('./model/vwsale.class.php');
+include_once('./model/creditcard.class.php');
+include_once('./model/customer.class.php');
+include_once('./model/payment.class.php');
+include_once('./model/setting.class.php');  
 include_once('./database/database.class.php');
 include_once('./controller/base.controller.php');
 

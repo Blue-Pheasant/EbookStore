@@ -1,21 +1,21 @@
 <?php
-class CardPaymentsController extends BaseController {
+class CreditCardsController extends BaseController {
     
     public function __CONSTRUCT (){}
     
     public function Index () {
-        $model = CardPayment::GetAllCardPayments();
+        $model = CreditCard::GetAllCreditCards();
         parent::RenderPage(
-            'CardPayments', 
+            'CreditCards', 
             'view/shared/dtadmin/layout.php', 
-            'view/CardPayments/CardPayments.php',
+            'view/creditcards/creditcards.php',
             $model
         );
     }
     
     public function Edit () {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $model = new CardPayment(
+            $model = new CreditCard(
                 $_REQUEST['code'], 
                 $_REQUEST['brand'],
                 $_REQUEST['description'],
@@ -24,14 +24,14 @@ class CardPaymentsController extends BaseController {
                 $_REQUEST['id']
             );
             $model->Edit();
-            parent::RedirectToController('CardPayments');
+            parent::RedirectToController('credits');
         } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = (int)$_REQUEST['id'];
-            $model = CardPayment::GetCardPaymentById($id);
+            $model = CreditCard::GetCreditCardById($id);
             parent::RenderPage(
-                'CardPayments',
+                'CreditCards',
                 'view/shared/dtadmin/layout.php', 
-                'view/CardPayments/edit.php',
+                'view/creditcards/edit.php',
                 $model
             );
         }
@@ -39,7 +39,7 @@ class CardPaymentsController extends BaseController {
 
     public function Create () {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $model = new CardPayment(
+            $model = new CreditCard(
                 $_REQUEST['code'], 
                 $_REQUEST['brand'],
                 $_REQUEST['description'],
@@ -47,12 +47,12 @@ class CardPaymentsController extends BaseController {
                 $_REQUEST['quantity']
             );
             $model->Create();
-            parent::RedirectToController('CardPayments');
+            parent::RedirectToController('credits');
         } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             parent::RenderPage(
-                'CardPayments',
+                'CreditCards',
                 'view/shared/dtadmin/layout.php', 
-                'view/CardPayments/create.php'
+                'view/creditcards/create.php'
             );
         }
     }
@@ -60,16 +60,16 @@ class CardPaymentsController extends BaseController {
     public function Delete () {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = (int)$_REQUEST['id'];
-            $model = CardPayment::GetCardPaymentById($id);
+            $model = CreditCard::GetCreditCardById($id);
             $model->Delete();
-            parent::RedirectToController('CardPayments');
+            parent::RedirectToController('credits');
         } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = (int)$_REQUEST['id'];
-            $model = CardPayment::GetCardPaymentById($id);
+            $model = CreditCard::GetCreditCardById($id);
             parent::RenderPage(
-                'CardPayments',
+                'CreditCards',
                 'view/shared/dtadmin/layout.php', 
-                'view/CardPayments/delete.php',
+                'view/creditcards/delete.php',
                 $model
             );
         }
@@ -77,11 +77,11 @@ class CardPaymentsController extends BaseController {
 
     public function Details () {
         $id = (int)$_REQUEST['id'];
-        $model = CardPayment::GetCardPaymentById($id);
+        $model = CreditCard::GetCreditCardById($id);
         parent::RenderPage(
-            'CardPayments',
+            'CreditCards',
             'view/shared/dtadmin/layout.php', 
-            'view/CardPayments/details.php',
+            'view/creditcards/details.php',
             $model
         );
     }

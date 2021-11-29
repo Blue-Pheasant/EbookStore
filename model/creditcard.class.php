@@ -54,7 +54,7 @@ class CreditCard {
   public static function GetCreditCardById ($id) {
     $model = null;
     $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare('SELECT * FROM `credit_card` WHERE `number_card` = ?');
+    $statement = $db->prepare('SELECT `number_card`, `n_bank`, `n_owner`, `n_branch`, `id_customer`, `start_time`, `end_time` FROM `credit_card` WHERE `number_card` = ?');
     $statement->bind_param('s', $number_card);
     $statement->bind_result($number_card, $n_bank, $n_owner, $n_branch, $id_customer, $start_time, $end_time);
     if ($statement->execute()) {
@@ -68,7 +68,7 @@ class CreditCard {
   public static function GetAllCreditCards () {
     $models = [];
     $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare('SELECT * FROM `credit_card`');
+    $statement = $db->prepare('SELECT `number_card`, `n_bank`, `n_owner`, `n_branch`, `id_customer`, `start_time`, `end_time` FROM `credit_card`');
     $statement->bind_result($number_card, $n_bank, $n_owner, $n_branch, $id_customer, $start_time, $end_time);
     if ($statement->execute()) {
       while ($statement->fetch()) {

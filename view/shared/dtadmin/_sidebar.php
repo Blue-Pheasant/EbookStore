@@ -18,8 +18,23 @@
           </a>
         </li>
         <li>
-          <a href="?c=sales" class="<?=(($PAGE == 'Sales') ? 'active' : '')?>">
-            <i class="fa fa-history" aria-hidden="true"></i>&nbsp;Bán hàng
+          <a href="?c=customers" class="<?=(($PAGE == 'Customers') ? 'active' : '')?>">
+            <i class="fa fa-building" aria-hidden="true"></i> &nbsp;Khách hàng
+          </a>
+        </li>
+        <li>
+          <a href="?c=creditcards" class="<?=(($PAGE == 'CreditCards') ? 'active' : '')?>">
+            <i class="fa fa-history" aria-hidden="true"></i>&nbsp;Credit card
+          </a>
+        </li>
+        <li>
+          <a href="?c=cardpayments" class="<?=(($PAGE == 'CardPayments') ? 'active' : '')?>">
+            <i class="fa fa-history" aria-hidden="true"></i>&nbsp;Card payment
+          </a>
+        </li>
+        <li>
+          <a href="?c=payments" class="<?=(($PAGE == 'Payments') ? 'active' : '')?>">
+            <i class="fa fa-history" aria-hidden="true"></i>&nbsp;Payment
           </a>
         </li>
       <?php } else { ?>

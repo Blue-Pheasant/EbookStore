@@ -21,16 +21,6 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <?php if (Security::GetLoggedUser() != null && ShoppingCartSession::ShoppingCartExists()) { 
-                $cart = ShoppingCartSession::GetShoppingCart(); ?>
-          <li>
-            <a href="?c=cart">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-              &nbsp;
-              <?=count($cart->articles)?> Các mặt hàng trong giỏ hàng
-            </a>
-          </li>
-        <?php } ?>
         <li><a href="?c=authentication&a=Logout"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Đăng xuất</a></li>
       </ul>
     </div>

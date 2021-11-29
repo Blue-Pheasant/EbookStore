@@ -7,16 +7,15 @@ class Payment {
   public function getId () { return $this->id_payment; }
   private function setId ($id_payment) { $this->id_payment = $id_payment; }
 
-  public function __construct(
-    $id_payment = ''
-  ) {
+  public function __construct($id_payment = '') 
+  {
     $this->id_payment = $id_payment;
   }
 
   public static function GetPaymentById ($id_payment) {
     $model = null;
     $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare('SELECT * FROM `payment` WHERE `id_payment` = ?');
+    $statement = $db->prepare('SELECT `id_payment` FROM `payment` WHERE `id_payment` = ?');
     $statement->bind_param('s', $id_payment);
     $statement->bind_result($id_payment);
     if ($statement->execute()) {
@@ -30,7 +29,7 @@ class Payment {
   public static function GetAllPayments () {
     $models = [];
     $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare('SELECT * FROM `payment`');
+    $statement = $db->prepare('SELECT `id_payment` FROM `payment`');
     $statement->bind_result($id_payment);
     if ($statement->execute()) {
       while ($row = $statement->fetch()) {

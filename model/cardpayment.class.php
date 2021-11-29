@@ -3,13 +3,13 @@ class CardPayment {
 
   /* Mapped */
   
-  private $id;
-  public function getId () { return $this->id; }
-  private function setId ($id) { $this->id = $id; }
+  private $id_payment;
+  public function getId () { return $this->id_payment; }
+  private function setId ($id_payment) { $this->id_payment = $id_payment; }
 
   private $number_card; 
-  public function getCode () { return $this->number_card; }
-  public function setCode ($number_card) { $this->number_card = $number_card; }
+  public function getNumberCard () { return $this->number_card; }
+  public function setNumberCard ($number_card) { $this->number_card = $number_card; }
 
   /* No-mapped */
 
@@ -21,11 +21,11 @@ class CardPayment {
         $this->number_card = $number_card;
     }
 
-  public static function GetCardPaymentById ($id) {
+  public static function GetCardPaymentById ($id_payment) {
     $model = null;
     $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare('SELECT * FROM `card_payment` WHERE `id_payment` = ?');
-    $statement->bind_param('s', $id);
+    $statement = $db->prepare('SELECT `id_payment`, `number_card` FROM `card_payment` WHERE `id_payment` = ?');
+    $statement->bind_param('s', $id_payment);
     $statement->bind_result($id, $number_card);
     if ($statement->execute()) {
       while ($statement->fetch()) {
@@ -38,11 +38,11 @@ class CardPayment {
   public static function GetAllCardPayments () {
     $models = [];
     $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare('SELECT * FROM `card_payment`');
-    $statement->bind_result($id, $number_card);
+    $statement = $db->prepare('SELECT `id_payment`, `number_card` FROM `card_payment`');
+    $statement->bind_result($id_payment, $number_card);
     if ($statement->execute()) {
       while ($statement->fetch()) {
-        $model = new CardPayment($id, $number_card);
+        $model = new CardPayment($id_payment, $number_card);
         array_push($models, $model);
       }
     }
@@ -69,7 +69,7 @@ class CardPayment {
     );
     $statement->bind_param(
       'ss',
-      $this->id,
+      $this->id_payment,
       $this->number_card
     );
     $statement->execute();

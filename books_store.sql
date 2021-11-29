@@ -9,7 +9,7 @@
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+7:00' */;
+/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
@@ -606,6 +606,36 @@ INSERT INTO `supply_book` VALUES ('Bertelsmann','2002-08-13 00:00:00','0005'),('
 UNLOCK TABLES;
 
 --
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `users` (
+  `ID` int NOT NULL,
+  `IDCARD` varchar(50) NOT NULL,
+  `NAME` varchar(50) NOT NULL,
+  `LASTNAME` varchar(50) NOT NULL,
+  `PHONE` varchar(50) NOT NULL,
+  `EMAIL` varchar(255) NOT NULL,
+  `USERNAME` varchar(50) NOT NULL,
+  `PASSWORD` varchar(255) NOT NULL,
+  `ROLE` varchar(50) NOT NULL DEFAULT 'CLIENT'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'115870399','Kevin','Rodriguez','84215616','_@kevinrodriguez.io','admin','$2y$10$PT7JY/5lAizPM8bf1QvYqe5R4xdbVnXNewQv9Zg3LxmLeC/FHqWVi','ADMIN'),(2,'115870341','David','Rodriguez','84215617','David@gmail.com','david','$2y$10$NhLH/kJhPnXflFFse/3lg.YzkSLzP9WxB5863WmeE3ucVGyc5SgVm','ADMIN'),(3,'115870400','Angela','Jhonson','80809191','maquinadehielo@gmail.com','client','$2y$10$r4ZtMHoCdu.38Q1tzxmtDevWf.wXaJ5afn7KJJKXvVgrnqMAoknr.','CLIENT'),(4,'115870402','Peter','Jhonsone','81809192','Peter@gmail.com','peter','$2y$10$RxFp36KffDCBGUDt2NkqROL8zYFgJ/vKNTsHnJiVdDolMUrO0AZ6y','CLIENT');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `voucher`
 --
 
@@ -668,4 +698,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-29 17:11:02
+-- Dump completed on 2021-11-29 21:45:41

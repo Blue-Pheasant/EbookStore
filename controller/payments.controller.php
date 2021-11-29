@@ -1,21 +1,21 @@
 <?php
-class CreditCardsController extends BaseController {
+class PaymentsController extends BaseController {
     
     public function __CONSTRUCT (){}
     
     public function Index () {
-        $model = CreditCard::GetAllCreditCards();
+        $model = Payment::GetAllPayments();
         parent::RenderPage(
-            'CreditCards', 
+            'Payments', 
             'view/shared/dtadmin/layout.php', 
-            'view/credits/credits.php',
+            'view/payments/payments.php',
             $model
         );
     }
     
     public function Edit () {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $model = new CreditCard(
+            $model = new Payment(
                 $_REQUEST['code'], 
                 $_REQUEST['brand'],
                 $_REQUEST['description'],
@@ -24,14 +24,14 @@ class CreditCardsController extends BaseController {
                 $_REQUEST['id']
             );
             $model->Edit();
-            parent::RedirectToController('credits');
+            parent::RedirectToController('payments');
         } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = (int)$_REQUEST['id'];
-            $model = CreditCard::GetCreditCardById($id);
+            $model = Payment::GetPaymentById($id);
             parent::RenderPage(
-                'CreditCards',
+                'Payments',
                 'view/shared/dtadmin/layout.php', 
-                'view/credits/edit.php',
+                'view/payments/edit.php',
                 $model
             );
         }
@@ -39,7 +39,7 @@ class CreditCardsController extends BaseController {
 
     public function Create () {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $model = new CreditCard(
+            $model = new Payment(
                 $_REQUEST['code'], 
                 $_REQUEST['brand'],
                 $_REQUEST['description'],
@@ -47,12 +47,12 @@ class CreditCardsController extends BaseController {
                 $_REQUEST['quantity']
             );
             $model->Create();
-            parent::RedirectToController('credits');
+            parent::RedirectToController('payments');
         } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             parent::RenderPage(
-                'CreditCards',
+                'Payments',
                 'view/shared/dtadmin/layout.php', 
-                'view/credits/create.php'
+                'view/payments/create.php'
             );
         }
     }
@@ -60,16 +60,16 @@ class CreditCardsController extends BaseController {
     public function Delete () {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = (int)$_REQUEST['id'];
-            $model = CreditCard::GetCreditCardById($id);
+            $model = Payment::GetPaymentById($id);
             $model->Delete();
-            parent::RedirectToController('credits');
+            parent::RedirectToController('payments');
         } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $id = (int)$_REQUEST['id'];
-            $model = CreditCard::GetCreditCardById($id);
+            $model = Payment::GetPaymentById($id);
             parent::RenderPage(
-                'CreditCards',
+                'Payments',
                 'view/shared/dtadmin/layout.php', 
-                'view/credits/delete.php',
+                'view/payments/delete.php',
                 $model
             );
         }
@@ -77,11 +77,11 @@ class CreditCardsController extends BaseController {
 
     public function Details () {
         $id = (int)$_REQUEST['id'];
-        $model = CreditCard::GetCreditCardById($id);
+        $model = Payment::GetPaymentById($id);
         parent::RenderPage(
-            'CreditCards',
+            'Payments',
             'view/shared/dtadmin/layout.php', 
-            'view/credits/details.php',
+            'view/payments/details.php',
             $model
         );
     }

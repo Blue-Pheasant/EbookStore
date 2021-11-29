@@ -3,15 +3,7 @@
     <section class="panel">
       <header class="panel-heading">
         <h1>Sản phẩm</h1>
-        <?php 
-          if ((Security::GetLoggedUser())->getRole() == 'ADMIN') { 
-                    $controller = strtolower($_REQUEST['c']);
-                    $accion = isset($_REQUEST['a']) ? $_REQUEST['a'] : 'Index';
-                    echo $controller .'<br>';
-                    echo $accion .'<br>';
-        ?>
           <a href="?c=articles&a=Create" class="btn btn-success">Tạo ra</a>
-        <?php } ?>
       </header>
       <div class="panel-body">
         <table class="table table-striped table-hover dt-datatable">
