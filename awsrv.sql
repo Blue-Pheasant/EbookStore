@@ -113,7 +113,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`ID`, `IDCARD`, `NAME`, `LASTNAME`, `PHONE`, `EMAIL`, `USERNAME`, `PASSWORD`, `ROLE`) VALUES
 (1, '115870399', 'Kevin', 'Rodriguez', '84215616', '_@kevinrodriguez.io', 'admin', '$2y$10$PT7JY/5lAizPM8bf1QvYqe5R4xdbVnXNewQv9Zg3LxmLeC/FHqWVi', 'ADMIN'),
-(3, '115870400', 'Angela', 'Jhonson', '80809191', 'maquinadehielo@gmail.com', 'client', '$2y$10$r4ZtMHoCdu.38Q1tzxmtDevWf.wXaJ5afn7KJJKXvVgrnqMAoknr.', 'CLIENT');
+(2, '115870341', 'David', 'Rodriguez', '84215617', 'David@gmail.com', 'david', '$2y$10$NhLH/kJhPnXflFFse/3lg.YzkSLzP9WxB5863WmeE3ucVGyc5SgVm', 'ADMIN'),
+(3, '115870400', 'Angela', 'Jhonson', '80809191', 'maquinadehielo@gmail.com', 'client', '$2y$10$r4ZtMHoCdu.38Q1tzxmtDevWf.wXaJ5afn7KJJKXvVgrnqMAoknr.', 'CLIENT'),
+(4, '115870402', 'Peter', 'Jhonsone', '81809192', 'Peter@gmail.com', 'peter', '$2y$10$RxFp36KffDCBGUDt2NkqROL8zYFgJ/vKNTsHnJiVdDolMUrO0AZ6y', 'CLIENT');
 
 -- --------------------------------------------------------
 

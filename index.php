@@ -60,14 +60,14 @@ class FrontController {
      * @return void
      */
     private static function RenderFromQueryString () {
-        // Obtenemos el controlador que queremos cargar
+        // We get the controller that we want to load
         $controller = strtolower($_REQUEST['c']);
         $accion = isset($_REQUEST['a']) ? $_REQUEST['a'] : 'Index';
-        // Instanciamos el controlador
+        // We instantiate the driver
         require_once "controller/$controller.controller.php";
         $controller = ucwords($controller).'Controller';
         $controller = new $controller;
-        // Llama la accion
+        // Call action
         call_user_func(array($controller, $accion));
     }
 

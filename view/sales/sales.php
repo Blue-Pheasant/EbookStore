@@ -3,9 +3,9 @@
     <section class="panel">
       <header class="panel-heading">
         <?php if ((Security::GetLoggedUser())->getRole() == 'ADMIN') { ?>
-          <h1>Ventas</h1>
+          <h1>Bán hàng</h1>
         <?php } else { ?>
-          <h1>Mi historial de compras</h1>
+          <h1>Lịch sử mua hàng của tôi</h1>
         <?php } ?>
       </header>
       <div class="panel-body">
@@ -13,13 +13,13 @@
           <thead>
             <tr>
             <?php if ((Security::GetLoggedUser())->getRole() == 'ADMIN') { ?>
-              <th>Usuario</th>
+              <th>Người sử dụng</th>
             <?php } ?>
-              <th>Código</th>
-              <th>Marca</th>
-              <th>Descripción</th>
-              <th>Número de factura</th>
-              <th>Fecha de venta</th>
+              <th>ID</th>
+              <th>Branch</th>
+              <th>Description</th>
+              <th>Số hóa đơn</th>
+              <th>Ngày bán</th>
             </tr>
           </thead>
           <tbody>

@@ -2,20 +2,31 @@
   <div class="col-lg-12">
     <section class="panel">
       <header class="panel-heading">
-        <h1>Artículos</h1>
-        <?php if ((Security::GetLoggedUser())->getRole() == 'ADMIN') { ?>
-          <a href="?c=articles&a=Create" class="btn btn-success">Crear</a>
+        <h1>Sản phẩm</h1>
+        <?php if ((Security::GetLoggedUser())->getRole() == 'ADMIN') { 
+                  $controller = strtolower($_REQUEST['c']);
+                  $accion = isset($_REQUEST['a']) ? $_REQUEST['a'] : 'Index';
+                  // We instantiate the driver
+                  // require_once "controller/$controller.controller.php";
+                  // $controller = ucwords($controller).'Controller';
+                  // $controller = new $controller;
+                  echo $controller .'<br>';
+                  echo $accion .'<br>';
+                  
+                  
+                  ?>
+          <a href="?c=articles&a=Create" class="btn btn-success">Tạo ra</a>
         <?php } ?>
       </header>
       <div class="panel-body">
         <table class="table table-striped table-hover dt-datatable">
           <thead>
             <tr>
-              <th>Código</th>
-              <th>Marca</th>
-              <th>Descripción</th>
-              <th>Precio</th>
-              <th>Cantidad</th>
+              <th>ID</th>
+              <th>Branch</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Quantity</th>
               <th class="no-sort"></th>
             </tr>
           </thead>
@@ -35,7 +46,7 @@
                     <a class="fa fa-pencil btn btn-warning btn-sm" href="?c=articles&a=Edit&id=<?=$article->getId()?>"></a>
                     <a class="fa fa-trash btn btn-danger btn-sm" href="?c=articles&a=Delete&id=<?=$article->getId()?>"></a>
                   <?php } else { ?>
-                    <a class="btn btn-primary btn-sm" href="?c=articles&a=Buy&id=<?=$article->getId()?>"><i class="fa fa-cart-plus"></i> Agregar al carrito</a>
+                    <a class="btn btn-primary btn-sm" href="?c=articles&a=Buy&id=<?=$article->getId()?>"><i class="fa fa-cart-plus"></i> Thêm vào giỏ hàng</a>
                   <?php } ?>
                 </td>
               </tr>

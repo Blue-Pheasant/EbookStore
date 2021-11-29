@@ -6,7 +6,7 @@
         <form class="form-signin" action="?c=authentication&a=Login" method="POST" >
           <input type="text" class="form-control" placeholder="Username" name="username" required autofocus />
           <input type="password" class="form-control" placeholder="Password" name="password" required />
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
           <?php if ($MODEL != null) { ?>
             <?=$MODEL->getMessage()?>
           <?php } ?>

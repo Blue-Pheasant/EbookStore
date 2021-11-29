@@ -90,7 +90,7 @@ class Article {
       $this->price,
       $this->quantity
     );
-    $statement->execute();
+    $statement->execute();  
   }
 
   public function Edit () {

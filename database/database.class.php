@@ -9,8 +9,8 @@ class DataBase {
   public function __construct(
     $hostname= 'localhost',
     $database= 'awsrv',
-    $username= 'AWSRV',
-    $password= 'sanpedro123!'
+    $username= 'root',
+    $password= ''
   ) {
     $this->hostname = $hostname;
     $this->database= $database;
@@ -21,7 +21,7 @@ class DataBase {
   public function CreateConnection() {
     $db = new mysqli($this->hostname, $this->username, $this->password, $this->database);
     if($db->connect_error){
-      throw new Exception('Falló la conexión ('.$db->connect_errno.')');
+      throw new Exception('Fail connection ('.$db->connect_errno.')');
     }
     return $db;
   }

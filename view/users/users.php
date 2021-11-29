@@ -2,18 +2,18 @@
   <div class="col-lg-12">
     <section class="panel">
       <header class="panel-heading">
-        <h1>Usuarios</h1>
-        <a href="?c=users&a=Create" class="btn btn-success">Crear</a>
+        <h1>Người dùng</h1>
+        <a href="?c=users&a=Create" class="btn btn-success">Tạo ra</a>
       </header>
       <div class="panel-body">
         <table class="table table-striped table-hover dt-datatable">
           <thead>
             <tr>
-              <th>Nombre de usuario</th>
-              <th>Nombre</th>
-              <th>Apellidos</th>
-              <th>Teléfono</th>
-              <th>Correo electrónico</th>
+              <th>Tên tài khoản</th>
+              <th>Tên</th>
+              <th>Họ</th>
+              <th>Điện thoại</th>
+              <th>E-mail</th>
               <th class="no-sort"></th>
             </tr>
           </thead>
@@ -44,28 +44,3 @@
     </section>
   </div>
 </div>
-<!-- <script type="text/javascript">
-function getUserDetails (element) {
-  var uri = $(element).data('href')
-  $.ajax({
-    url: uri,
-    method: 'POST',
-    success: function (result) {
-      alert('Nombre: ' + result.username + ', Name: ' + result.name + ', Last name: ' + result.lastName + ', Phone: ' + result.phone + ', Email: ' + result.email)
-    }
-  })
-}
-function deleteUser (element) {
-  var uri = $(element).data('href')
-  if (confirm('¿Realmente desea borrar este usuario>')) {
-    $.ajax({
-      url: uri,
-      method: 'POST',
-      success: function (result) {
-        alert('Usuario borrado correctamente')
-        location.reload()
-      }
-    })
-  }
-}
-</script> -->

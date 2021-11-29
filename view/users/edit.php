@@ -3,46 +3,46 @@
     <section class="panel">
       <header class="panel-heading">
         <?php if ((Security::GetLoggedUser())->getRole() == 'ADMIN') { ?>
-          <h1>Modificar usuario</h1>
-          <a href="?c=users">Regresar</a>
+          <h1>Sửa đổi người dùng</h1>
+          <a href="?c=users">Trở về</a>
         <?php } else { ?>
-          <h1>Mi cuenta</h1>
+          <h1>Tài khoản của tôi</h1>
         <?php } ?>
       </header>
       <div class="panel-body">
         <form action="?c=users&a=Edit" method="POST" autocomplete="off">
           <div class="form-row">
             <div class="form-group col-md-4">
-              <label for="username">Usuario</label>
-              <input value="<?= $MODEL->getUsername() ?>" type="text" class="form-control" id="username" name="username" placeholder="Usuario" <?=(Security::GetLoggedUser())->getRole() == 'CLIENT' ? 'disabled="disabled"' : ''?>>
+              <label for="username">Người sử dụng</label>
+              <input value="<?= $MODEL->getUsername() ?>" type="text" class="form-control" id="username" name="username" placeholder="Username" <?=(Security::GetLoggedUser())->getRole() == 'CLIENT' ? 'disabled="disabled"' : ''?>>
             </div>
             <div class="form-group col-md-4">
-              <label for="password">Contraseña</label>
-              <input value="<?= $MODEL->getPassword() ?>" type="text" class="form-control" id="password" name="password" placeholder="Contraseña">
+              <label for="password">Mật khẩu</label>
+              <input value="<?= $MODEL->getPassword() ?>" type="text" class="form-control" id="password" name="password" placeholder="Password">
             </div>
             <div class="form-group col-md-4">
-                <label for="email">Correo electrónico</label>
-                <input value="<?= $MODEL->getEmail() ?>" type="email" class="form-control" id="email" name="email" placeholder="micorreo@midominio.com">
+                <label for="email">E-mail</label>
+                <input value="<?= $MODEL->getEmail() ?>" type="email" class="form-control" id="email" name="email" placeholder="yourmail@example.com">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="name">Nombre</label>
-              <input value="<?= $MODEL->getName() ?>" type="text" class="form-control" id="name" name="name" placeholder="Nombre">
+                <label for="name">Tên</label>
+              <input value="<?= $MODEL->getName() ?>" type="text" class="form-control" id="name" name="name" placeholder="Tên">
             </div>
             <div class="form-group col-md-6">
-              <label for="lastName">Apellidos</label>
-              <input value="<?= $MODEL->getLastname() ?>" type="text" class="form-control" id="lastName" name="lastName" placeholder="Apellidos">
+              <label for="lastName">Họ</label>
+              <input value="<?= $MODEL->getLastname() ?>" type="text" class="form-control" id="lastName" name="lastName" placeholder="Họ">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="idCard">Cédula</label>
-              <input value="<?= $MODEL->getIdCard() ?>" type="text" class="form-control" id="idCard" name="idCard" placeholder="Cédula">
+              <label for="idCard">Thẻ nhận dạng - Chứng minh nhân dân</label>
+              <input value="<?= $MODEL->getIdCard() ?>" type="text" class="form-control" id="idCard" name="idCard" placeholder="CMND">
             </div>
             <div class="form-group col-md-4">
-              <label for="phone">Teléfono</label>
-              <input value="<?= $MODEL->getPhone() ?>" type="text" class="form-control" id="phone" name="phone" placeholder="Teléfono">
+              <label for="phone">Điện thoại</label>
+              <input value="<?= $MODEL->getPhone() ?>" type="text" class="form-control" id="phone" name="phone" placeholder="Điện thoại">
             </div>
             <div class="form-group col-md-2">
               <label for="role">Rol</label>

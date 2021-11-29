@@ -22,7 +22,7 @@
     <script src="assets/dtadmin/scripts/dataTables.bootstrap.js"></script>
     <script src="assets/dtadmin/scripts/underscore.js"></script>
 
-</head>
+</head> 
 
 <body>
   <div id="wrapper" class="toggled">
