@@ -3,10 +3,10 @@
     <section class="panel">
       <header class="panel-heading">
         <h1>Sửa đổi sản phẩm</h1>
-        <a href="?c=articles">Trở về</a>
+        <a href="?c=customers">Trở về</a>
       </header>
       <div class="panel-body">
-        <form action="?c=articles&a=Edit" method="POST" autocomplete="off">
+        <form action="?c=customers&a=Edit" method="POST" autocomplete="off">
           <div class="form-row">
             <div class="form-group col-md-4">
               <label for="code">ID</label>

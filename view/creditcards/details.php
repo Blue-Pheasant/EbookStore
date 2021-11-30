@@ -3,7 +3,7 @@
     <section class="panel">
       <header class="panel-heading">
         <h1>Mục chi tiết</h1>
-        <a href="?c=articles">Trở về</a>
+        <a href="?c=creditcards">Trở về</a>
       </header>
       <div class="panel-body">
         <dl class="dl-horizontal">

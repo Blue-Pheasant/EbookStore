@@ -3,10 +3,10 @@
     <section class="panel">
       <header class="panel-heading">
         <h1>Tạo Card Payment</h1>
-        <a href="?c=articles">Trở về</a>
+        <a href="?c=cardpayments">Trở về</a>
       </header>
       <div class="panel-body">
-        <form action="?c=articles&a=Create" method="POST" autocomplete="off">
+        <form action="?c=cardpayments&a=Create" method="POST" autocomplete="off">
           <div class="form-row">
             <div class="form-group col-md-4">
               <label for="brand">Branch</label>
