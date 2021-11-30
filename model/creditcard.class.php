@@ -51,7 +51,7 @@ class CreditCard {
     $this->end_time = $end_time;
   }
 
-  public static function GetCreditCardById ($id) {
+  public static function GetCreditCardById ($number_card) {
     $model = null;
     $db = (new DataBase())->CreateConnection();
     $statement = $db->prepare('SELECT `number_card`, `n_bank`, `n_owner`, `n_branch`, `id_customer`, `start_time`, `end_time` FROM `credit_card` WHERE `number_card` = ?');

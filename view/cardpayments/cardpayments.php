@@ -9,32 +9,22 @@
         <table class="table table-striped table-hover dt-datatable">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Branch</th>
-              <th>Description</th>
-              <th>Price</th>
-              <th>Quantity</th>
+              <th>ID Payment</th>
+              <th>Number Card</th>
               <th class="no-sort"></th>
             </tr>
           </thead>
           <tbody>
             <?php
-              foreach ($MODEL as $article) { 
+              foreach ($MODEL as $card_payment) { 
             ?>
               <tr>
-                <td><?=$article->getCode()?></td>
-                <td><?=$article->getBrand()?></td>
-                <td><?=$article->getDescription()?></td>
-                <td><?=$article->getPrice()?></td>
-                <td><?=$article->getQuantity()?></td>
+                <td><?=$card_payment->getIdPayment()?></td>
+                <td><?=$card_payment->getNumberCard()?></td>
                 <td>
-                  <?php if ((Security::GetLoggedUser())->getRole() == 'ADMIN') { ?>
-                    <a class="fa fa-eye btn btn-info btn-sm" href="?c=articles&a=Details&id=<?=$article->getId()?>"></a>
-                    <a class="fa fa-pencil btn btn-warning btn-sm" href="?c=articles&a=Edit&id=<?=$article->getId()?>"></a>
-                    <a class="fa fa-trash btn btn-danger btn-sm" href="?c=articles&a=Delete&id=<?=$article->getId()?>"></a>
-                  <?php } else { ?>
-                    <a class="btn btn-primary btn-sm" href="?c=articles&a=Buy&id=<?=$article->getId()?>"><i class="fa fa-cart-plus"></i> Thêm vào giỏ hàng</a>
-                  <?php } ?>
+                  <a class="fa fa-eye btn btn-info btn-sm" href="?c=cartpayments&a=Details&id=<?=$card_payment->getIdPayment()?>"></a>
+                  <a class="fa fa-pencil btn btn-warning btn-sm" href="?c=cartpayments&a=Edit&id=<?=$card_payment->getIdPayment()?>"></a>
+                  <a class="fa fa-trash btn btn-danger btn-sm" href="?c=cartpayments&a=Delete&id=<?=$card_payment->getIdPayment()?>"></a>
                 </td>
               </tr>
             <?php 

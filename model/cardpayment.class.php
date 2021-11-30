@@ -4,8 +4,8 @@ class CardPayment {
   /* Mapped */
   
   private $id_payment;
-  public function getId () { return $this->id_payment; }
-  private function setId ($id_payment) { $this->id_payment = $id_payment; }
+  public function getIdPayment () { return $this->id_payment; }
+  private function setIdPayment ($id_payment) { $this->id_payment = $id_payment; }
 
   private $number_card; 
   public function getNumberCard () { return $this->number_card; }
@@ -14,10 +14,10 @@ class CardPayment {
   /* No-mapped */
 
   public function __construct(
-    $id = '',
+    $id_payment = '',
     $number_card = '',
   ) {
-        $this->id = $id;
+        $this->id_payment = $id_payment;
         $this->number_card = $number_card;
     }
 
@@ -26,10 +26,10 @@ class CardPayment {
     $db = (new DataBase())->CreateConnection();
     $statement = $db->prepare('SELECT `id_payment`, `number_card` FROM `card_payment` WHERE `id_payment` = ?');
     $statement->bind_param('s', $id_payment);
-    $statement->bind_result($id, $number_card);
+    $statement->bind_result($id_payment, $number_card);
     if ($statement->execute()) {
       while ($statement->fetch()) {
-        $model = new CardPayment($id, $number_card);
+        $model = new CardPayment($id_payment, $number_card);
       }
     }
     return $model;

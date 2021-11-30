@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="assets/dtadmin/styles/dt-gradients.css">
     <link rel="stylesheet" href="assets/dtadmin/styles/dt-theme.css">
     <link rel="stylesheet" href="assets/dtadmin/styles/dt-styles.css">
+    <link rel="stylesheet" href="assets/dtadmin/styles/home.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" 
+          crossorigin="anonymous"/>
     <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">  -->
 
     <script src="assets/dtadmin/scripts/jquery-3.2.1.js"></script>

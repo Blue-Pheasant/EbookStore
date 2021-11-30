@@ -8,7 +8,7 @@ class CardPaymentsController extends BaseController {
         parent::RenderPage(
             'CardPayments', 
             'view/shared/dtadmin/layout.php', 
-            'view/cards/cards.php',
+            'view/cardpayments/cardpayments.php',
             $model
         );
     }
