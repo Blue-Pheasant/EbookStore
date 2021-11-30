@@ -3,6 +3,7 @@
     <section class="panel">
       <header class="panel-heading">
         <h1>Khách hàng</h1>
+        <a href="?c=customers&a=Create" class="btn btn-success">Tạo ra</a>
       </header>
       <div class="panel-body">
         <table class="table table-striped table-hover dt-datatable">

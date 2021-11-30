@@ -2,7 +2,7 @@
   <div class="col-lg-12">
     <section class="panel">
       <header class="panel-heading">
-        <h1>Tạo sản phẩm</h1>
+        <h1>Tạo người dùng</h1>
         <a href="?c=customers">Trở về</a>
       </header>
       <div class="panel-body">
@@ -10,46 +10,48 @@
           <div class="form-row">
             <div class="form-group col-md-4">
               <label for="code">ID</label>
-              <input type="text" class="form-control" id="code" name="code" placeholder="ID">
+              <input type="text" class="form-control" id="id_customer" name="id_customer" placeholder="id_customer">
             </div>
             <div class="form-group col-md-4">
               <label for="code">FNAME</label>
-              <input type="text" class="form-control" id="code" name="code" placeholder="ID">
+              <input type="text" class="form-control" id="f_name" name="f_name" placeholder="f_name">
             </div>
             <div class="form-group col-md-4">
-              <label for="code"></label>
-              <input type="text" class="form-control" id="code" name="code" placeholder="ID">
+              <label for="code">MNAME</label>
+              <input type="text" class="form-control" id="m_name" name="m_name" placeholder="m_name">
             </div>
             <div class="form-group col-md-4">
-              <label for="code">ID</label>
-              <input type="text" class="form-control" id="code" name="code" placeholder="ID">
+              <label for="code">LNAME</label>
+              <input type="text" class="form-control" id="l_name" name="l_name" placeholder="l_name">
             </div>
             <div class="form-group col-md-4">
-              <label for="code">ID</label>
-              <input type="text" class="form-control" id="code" name="code" placeholder="ID">
+              <label for="code">SEX</label>
+              <input type="text" class="form-control" id="sex" name="sex" placeholder="sex">
             </div>
             <div class="form-group col-md-4">
-              <label for="brand">Branch</label>
-              <input type="text" class="form-control" id="brand" name="brand" placeholder="Branch">
+              <label for="code">Birth Day</label>
+              <input type="text" class="form-control" id="date_of_birth" name="date_of_birth" placeholder="date_of_birth">
             </div>
             <div class="form-group col-md-4">
-              <label for="description">Description</label>
-              <input type="text" class="form-control" id="description" name="description" placeholder="Description">
+              <label for="brand">Address</label>
+              <input type="text" class="form-control" id="address_customer" name="address_customer" placeholder="address_customer">
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="price">Price</label>
-                <input type="text" class="form-control" id="price" name="price" placeholder="Price">
+            <div class="form-group col-md-4">
+              <label for="brand">Phone</label>
+              <input type="text" class="form-control" id="phone_customer" name="phone_customer" placeholder="phone_customer">
             </div>
-            <div class="form-group col-md-6">
-              <label for="quantity">Quantity</label>
-              <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Quantity">
+            <div class="form-group col-md-4">
+              <label for="brand">Email</label>
+              <input type="text" class="form-control" id="email_customer" name="email_customer" placeholder="email_customer">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="brand">Username</label>
+              <input type="text" class="form-control" id="username_customer" name="username_customer" placeholder="username_customer">
             </div>
           </div>
           <div class="form-row">
             <div class="col-md-4">
-              <button type="submit" class="btn btn-primary"><i class="fa fa-cart-plus"></i> Tạo sản phẩm</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-cart-plus"></i> Tạo mới</button>
             </div>
           </div>
         </form>
