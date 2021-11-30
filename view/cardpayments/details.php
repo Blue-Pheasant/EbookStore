@@ -3,15 +3,12 @@
     <section class="panel">
       <header class="panel-heading">
         <h1>Mục chi tiết</h1>
-        <a href="?c=articles">Trở về</a>
+        <a href="?c=cardpayments">Trở về</a>
       </header>
       <div class="panel-body">
         <dl class="dl-horizontal">
-          <dt>ID</dt><dd><?= $MODEL->getCode() ?></dd>
-          <dt>Branch</dt><dd><?= $MODEL->getBrand() ?></dd>
-          <dt>Description</dt><dd><?= $MODEL->getDescription() ?></dd>
-          <dt>Price</dt><dd><?= $MODEL->getPrice() ?></dd>
-          <dt>Quantity</dt><dd><?= $MODEL->getQuantity() ?></dd>
+          <dt>ID Payment</dt><dd><?= $MODEL->getIdPayment() ?></dd>
+          <dt>Number Card</dt><dd><?= $MODEL->getNumberCard() ?></dd>
         </dl>
       </div>
     </section>

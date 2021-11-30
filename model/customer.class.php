@@ -100,6 +100,5 @@ class Customer {
     $statement->bind_param('s', $this->id_customer);
     $statement->execute();
   }
-
 }
 ?>

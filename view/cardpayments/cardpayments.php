@@ -22,6 +22,8 @@
                 <td><?=$card_payment->getIdPayment()?></td>
                 <td><?=$card_payment->getNumberCard()?></td>
                 <td>
+                  <a class="fa fa-eye btn btn-info btn-sm" href="?c=cartpayments&a=Details&id=<?=$card_payment->getIdPayment()?>"></a>
+                  <a class="fa fa-pencil btn btn-warning btn-sm" href="?c=cartpayments&a=Edit&id=<?=$card_payment->getIdPayment()?>"></a>
                   <a class="fa fa-trash btn btn-danger btn-sm" href="?c=cartpayments&a=Delete&id=<?=$card_payment->getIdPayment()?>"></a>
                 </td>
               </tr>

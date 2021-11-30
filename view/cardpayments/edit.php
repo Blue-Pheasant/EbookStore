@@ -10,25 +10,11 @@
           <div class="form-row">
             <div class="form-group col-md-4">
               <label for="code">ID</label>
-              <input value="<?= $MODEL->getCode() ?>" type="text" class="form-control" id="code" name="code" placeholder="Código">
+              <input value="<?= $MODEL->getIdPayment() ?>" type="text" class="form-control" id="code" name="code" placeholder="Código">
             </div>
             <div class="form-group col-md-4">
               <label for="brand">Branch</label>
-              <input value="<?= $MODEL->getBrand() ?>" type="text" class="form-control" id="brand" name="brand" placeholder="Marca">
-            </div>
-            <div class="form-group col-md-4">
-              <label for="description">Description</label>
-              <input value="<?= $MODEL->getDescription() ?>" type="text" class="form-control" id="description" name="description" placeholder="micorreo@midominio.com">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="price">Price</label>
-                <input value="<?= $MODEL->getPrice() ?>" type="text" class="form-control" id="price" name="price" placeholder="Precio">
-            </div>
-            <div class="form-group col-md-6">
-              <label for="quantity">Quantity</label>
-              <input value="<?= $MODEL->getQuantity() ?>" type="number" class="form-control" id="quantity" name="quantity" placeholder="Apellidos">
+              <input value="<?= $MODEL->getNumberCard() ?>" type="text" class="form-control" id="brand" name="brand" placeholder="Marca">
             </div>
           </div>
           <div class="form-row">

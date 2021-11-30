@@ -13,6 +13,22 @@
               <input type="text" class="form-control" id="code" name="code" placeholder="ID">
             </div>
             <div class="form-group col-md-4">
+              <label for="code">FNAME</label>
+              <input type="text" class="form-control" id="code" name="code" placeholder="ID">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="code"></label>
+              <input type="text" class="form-control" id="code" name="code" placeholder="ID">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="code">ID</label>
+              <input type="text" class="form-control" id="code" name="code" placeholder="ID">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="code">ID</label>
+              <input type="text" class="form-control" id="code" name="code" placeholder="ID">
+            </div>
+            <div class="form-group col-md-4">
               <label for="brand">Branch</label>
               <input type="text" class="form-control" id="brand" name="brand" placeholder="Branch">
             </div>

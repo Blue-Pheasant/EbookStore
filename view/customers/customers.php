@@ -33,7 +33,9 @@
                 <td><?=$customer->getAddress()?></td>
                 <td><?=$customer->getPhone()?></td>
                 <td><?=$customer->getEmail()?></td>
-                <td> 
+                <td>
+                  <a class="fa fa-eye btn btn-info btn-sm" href="?c=customers&a=Details&id=<?=$customer->getId()?>"></a>
+                  <a class="fa fa-pencil btn btn-warning btn-sm" href="?c=customers&a=Edit&id=<?=$customer->getId()?>"></a>
                   <a class="fa fa-trash btn btn-danger btn-sm" href="?c=customers&a=Delete&id=<?=$customer->getId()?>"></a>
                 </td>
               </tr>
