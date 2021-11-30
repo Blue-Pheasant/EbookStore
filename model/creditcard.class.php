@@ -85,6 +85,6 @@ class CreditCard {
     $statement->bind_param('s', $this->number_card);
     $statement->execute();
   }
-  
+
 }
 ?>

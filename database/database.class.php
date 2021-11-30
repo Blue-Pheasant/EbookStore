@@ -8,9 +8,9 @@ class DataBase {
 
   public function __construct(
     $hostname= 'localhost',
-    $database= 'db',
+    $database= 'books_store',
     $username= 'root',
-    $password= ''
+    $password= '955363'
   ) {
     $this->hostname = $hostname;
     $this->database= $database;

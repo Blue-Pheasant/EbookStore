@@ -2,13 +2,13 @@
   <div class="col-lg-12">
     <section class="panel">
       <header class="panel-heading">
-        <h1>Sản phẩm</h1>
+        <h1>Giao dịch</h1>
       </header>
       <div class="panel-body">
         <table class="table table-striped table-hover dt-datatable">
           <thead>
             <tr>
-              <th>ID</th>
+              <th>Mã giao dịch</th>
               <th class="no-sort"></th>
             </tr>
           </thead>
