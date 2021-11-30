@@ -3,7 +3,6 @@
     <section class="panel">
       <header class="panel-heading">
         <h1>Credit card</h1>
-          <a href="?c=creditcards&a=Create" class="btn btn-success">Tạo ra</a>
       </header>
       <div class="panel-body">
         <table class="table table-striped table-hover dt-datatable">

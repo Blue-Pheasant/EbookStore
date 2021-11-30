@@ -3,7 +3,6 @@
     <section class="panel">
       <header class="panel-heading">
         <h1>Khách hàng</h1>
-          <a href="?c=customers&a=Create" class="btn btn-success">Tạo ra</a>
       </header>
       <div class="panel-body">
         <table class="table table-striped table-hover dt-datatable">
@@ -34,8 +33,6 @@
                 <td><?=$customer->getPhone()?></td>
                 <td><?=$customer->getEmail()?></td>
                 <td>
-                  <a class="fa fa-eye btn btn-info btn-sm" href="?c=customers&a=Details&id=<?=$customer->getId()?>"></a>
-                  <a class="fa fa-pencil btn btn-warning btn-sm" href="?c=customers&a=Edit&id=<?=$customer->getId()?>"></a>
                   <a class="fa fa-trash btn btn-danger btn-sm" href="?c=customers&a=Delete&id=<?=$customer->getId()?>"></a>
                 </td>
               </tr>
