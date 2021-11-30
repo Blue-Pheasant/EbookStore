@@ -49,36 +49,10 @@ class CardPayment {
     return $models;
   }
 
-  public function Create () {
-    $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare('INSERT INTO `card_payment`(`id_payment`, `number_card`) VALUES (?, ?)');
-    $statement->bind_param(
-      'ss',
-      $this->id,
-      $this->number_card
-    );
-    $statement->execute();  
-  }
-
-  public function Edit () {
-    $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare(
-      'UPDATE `card_payment` SET 
-        `number_card` = ?
-      WHERE `id_payment` = ?'
-    );
-    $statement->bind_param(
-      'ss',
-      $this->id_payment,
-      $this->number_card
-    );
-    $statement->execute();
-  }
-
   public function Delete () {
     $db = (new DataBase())->CreateConnection();
     $statement = $db->prepare('DELETE FROM `card_payment` WHERE `id_payment` = ?');
-    $statement->bind_param('s', $this->id);
+    $statement->bind_param('s', $this->id_payment);
     $statement->execute();
   }
 }

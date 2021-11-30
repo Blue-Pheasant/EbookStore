@@ -40,34 +40,10 @@ class Payment {
     return $models;
   }
 
-  public function Create () {
-    $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare('INSERT INTO `payment`(`id_payment`) VALUES (?)');
-    $statement->bind_param(
-      's',
-      $this->id_payment
-    );
-    $statement->execute();  
-  }
-
-  public function Edit () {
-    $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare(
-      'UPDATE `payment` SET 
-        `id_payment` = ?
-      WHERE `id_payment` = ?'
-    );
-    $statement->bind_param(
-      's',
-      $this->id_payment
-    );
-    $statement->execute();
-  }
-
   public function Delete () {
     $db = (new DataBase())->CreateConnection();
     $statement = $db->prepare('DELETE FROM `payment` WHERE `id_payment` = ?');
-    $statement->bind_param('s', $this->id);
+    $statement->bind_param('s', $this->id_payment);
     $statement->execute();
   }
 

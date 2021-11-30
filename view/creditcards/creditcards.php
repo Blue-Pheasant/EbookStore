@@ -32,8 +32,6 @@
                 <td><?=$credit_card->getStartTime()?></td>
                 <td><?=$credit_card->getEndTime()?></td>
                 <td>
-                  <a class="fa fa-eye btn btn-info btn-sm" href="?c=creditcards&a=Details&id=<?=$credit_card->getNumberCard()?>"></a>
-                  <a class="fa fa-pencil btn btn-warning btn-sm" href="?c=creditcards&a=Edit&id=<?=$credit_card->getNumberCard()?>"></a>
                   <a class="fa fa-trash btn btn-danger btn-sm" href="?c=creditcards&a=Delete&id=<?=$credit_card->getNumberCard()?>"></a>
                 </td>
               </tr>

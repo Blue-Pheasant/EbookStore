@@ -21,8 +21,6 @@
                 <td><?=$article->getId()?></td>
                 <td>
                   <?php if ((Security::GetLoggedUser())->getRole() == 'ADMIN') { ?>
-                    <a class="fa fa-eye btn btn-info btn-sm" href="?c=articles&a=Details&id=<?=$article->getId()?>"></a>
-                    <a class="fa fa-pencil btn btn-warning btn-sm" href="?c=articles&a=Edit&id=<?=$article->getId()?>"></a>
                     <a class="fa fa-trash btn btn-danger btn-sm" href="?c=articles&a=Delete&id=<?=$article->getId()?>"></a>
                   <?php } else { ?>
                     <a class="btn btn-primary btn-sm" href="?c=articles&a=Buy&id=<?=$article->getId()?>"><i class="fa fa-cart-plus"></i> Thêm vào giỏ hàng</a>

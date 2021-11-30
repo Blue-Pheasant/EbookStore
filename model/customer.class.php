@@ -71,10 +71,10 @@ class Customer {
     $db = (new DataBase())->CreateConnection();
     $statement = $db->prepare('SELECT * FROM `customer` WHERE `id_customer` = ?');
     $statement->bind_param('s', $id_customer);
-    $statement->bind_result($id_customer, $f_name, $m_name, $m_name, $l_name, $sex, $date_of_birth, $address_customer, $phone_customer, $email_customer, $username_customer, $password_customer);
+    $statement->bind_result($f_name, $m_name, $l_name, $sex, $date_of_birth, $address_customer, $phone_customer, $email_customer, $username_customer, $password_customer, $id_customer);
     if ($statement->execute()) {
       while ($statement->fetch()) {
-        $model = new Customer($id_customer, $f_name, $m_name, $m_name, $l_name, $sex, $date_of_birth, $address_customer, $phone_customer, $email_customer, $username_customer, $password_customer);
+        $model = new Customer($f_name, $m_name, $l_name, $sex, $date_of_birth, $address_customer, $phone_customer, $email_customer, $username_customer, $password_customer, $id_customer);
       }
     }
     return $model;
@@ -94,63 +94,12 @@ class Customer {
     return $models;
   }
 
-  public function Create () {
-    $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare('INSERT INTO `customer`(`f_name`, `m_name`, `l_name`, `sex`, `date_of_birth`, `address_customer`, `phone_customer`, `email_customer`, `username_customer`, `password_customer`, `id_customer`) VALUES (?, ?, ?, ?, ?)');
-    $statement->bind_param(
-      'sssssssssss',
-      $this->f_name,
-      $this->m_name,
-      $this->l_name,
-      $this->sex,
-      $this->date_of_birth,
-      $this->address_customer,
-      $this->phone_customer,
-      $this->email_customer,
-      $this->username_customer,
-      $this->password_customer,
-      $this->id_customer
-    );
-    $statement->execute();  
-  }
-
-  public function Edit () {
-    $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare(
-      'UPDATE `customer` SET 
-        `f_name` = ?, 
-        `m_name` = ?, 
-        `m_name` = ?, 
-        `l_name` = ?, 
-        `sex` = ?, 
-        `date_of_birth` = ?, 
-        `address_customer` = ?, 
-        `phone_customer` = ?, 
-        `email_customer` = ?, 
-      WHERE `id_customer` = ?'
-    );
-    $statement->bind_param(
-        'ssssssss',
-        $this->f_name,
-        $this->m_name,
-        $this->l_name,
-        $this->sex,
-        $this->date_of_birth,
-        $this->address_customer,
-        $this->phone_customer,
-        $this->email_customer,
-      );
-      $statement->execute(); 
-  }
-
   public function Delete () {
     $db = (new DataBase())->CreateConnection();
     $statement = $db->prepare('DELETE FROM `customer` WHERE `id_customer` = ?');
-    $statement->bind_param('s', $this->id);
+    $statement->bind_param('s', $this->id_customer);
     $statement->execute();
   }
-
-  
 
 }
 ?>

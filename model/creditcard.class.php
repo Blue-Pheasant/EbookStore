@@ -79,44 +79,6 @@ class CreditCard {
     return $models;
   }
 
-  public function Create () {
-    $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare('INSERT INTO `credit_card`(`number_card`, `n_bank`, `n_owner`, `n_branch`, `id_customer`, `start_time`, `end_time`) VALUES (?, ?, ?, ?, ?, ?, ?)');
-    $statement->bind_param(
-      'ssssss',
-      $this->number_card,
-      $this->n_bank,
-      $this->n_owner,
-      $this->n_branch,
-      $this->id_customer,
-      $this->start_time,
-      $this->end_time
-    );
-    $statement->execute();  
-  }
-
-  public function Edit () {
-    $db = (new DataBase())->CreateConnection();
-    $statement = $db->prepare(
-      'UPDATE `credit_card` SET 
-        `n_bank` = ?,
-        `n_owner` = ?,
-        `n_branch` = ?,
-        `start_time` = ?,
-        `end_time` = ? 
-      WHERE `number_card` = ?'
-    );
-    $statement->bind_param(
-      'sssss',
-      $this->n_bank,
-      $this->n_owner,
-      $this->n_branch,
-      $this->start_time,
-      $this->end_time
-    );
-    $statement->execute();
-  }
-
   public function Delete () {
     $db = (new DataBase())->CreateConnection();
     $statement = $db->prepare('DELETE FROM `credit_card` WHERE `number_card` = ?');
